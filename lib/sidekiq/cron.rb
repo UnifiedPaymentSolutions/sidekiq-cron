@@ -33,6 +33,8 @@ module Sidekiq
       # jobs that missed their schedules during the deployment. E.g., jobs that run once a day.
       attr_accessor :reschedule_grace_period
 
+      attr_accessor :cleanup_default_namespace_only
+
       def initialize
         @default_namespace = 'default'
         @natural_cron_parsing_mode = :single
